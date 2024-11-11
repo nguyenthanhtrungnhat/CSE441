@@ -28,13 +28,19 @@ export default function Login({ navigation }) {
         await AsyncStorage.setItem('authToken', token);
 
         // Navigate to MyTab
-        navigation.navigate('MyTab');
+        navigation.reset({
+          index: 0, // Set index to 0 so that 'MyTab' is the first screen
+          routes: [{ name: 'MyTab' }], // Route to 'MyTab' (your HomeStack)
+        });
       } else {
         Alert.alert('Login failed', 'No token returned.');
       }
     } catch (error) {
       console.error('Login error:', error);
-      Alert.alert('Login failed', 'Please check your credentials and try again.');
+      Alert.alert(
+        'Login failed',
+        'Please check your credentials and try again.'
+      );
     }
   };
 
