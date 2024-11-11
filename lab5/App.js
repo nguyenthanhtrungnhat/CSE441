@@ -71,7 +71,7 @@ const deleteData = async (item, navigation) => {
     Alert.alert('Error', 'An unexpected error occurred');
   }
 };
-// Home Stack
+
 // Home Stack
 function HomeStack() {
   return (
