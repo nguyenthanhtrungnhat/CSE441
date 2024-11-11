@@ -124,32 +124,7 @@ function HomeStack() {
   );
 }
 
-// Transaction Stack (Placeholder component used here)
-function TransactionStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Transaction" component={Home} />
-    </Stack.Navigator>
-  );
-}
 
-// Customer Stack (Placeholder component used here)
-function CustomerStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Customer" component={Home} />
-    </Stack.Navigator>
-  );
-}
-
-// Setting Stack (Placeholder component used here)
-function SettingStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Setting" component={Home} />
-    </Stack.Navigator>
-  );
-}
 
 // Bottom Tab Navigator
 function MyTab() {
@@ -167,7 +142,7 @@ function MyTab() {
       />
       <Tab.Screen
         name="Transaction"
-        component={TransactionStack}
+        component={HomeStack}
         options={{
           tabBarLabel: 'Transaction',
           tabBarIcon: ({ color }) => (
@@ -177,7 +152,7 @@ function MyTab() {
       />
       <Tab.Screen
         name="Customer"
-        component={CustomerStack}
+        component={HomeStack}
         options={{
           tabBarLabel: 'Customer',
           tabBarIcon: ({ color }) => (
@@ -187,7 +162,7 @@ function MyTab() {
       />
       <Tab.Screen
         name="Setting"
-        component={SettingStack}
+        component={HomeStack}
         options={{
           tabBarLabel: 'Setting',
           tabBarIcon: ({ color }) => (
