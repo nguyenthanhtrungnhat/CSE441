@@ -15,12 +15,10 @@ import axios from 'axios';
 
 export default function Home({ navigation }) {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
+ 
   const fetchData = async () => {
     try {
-      setLoading(true);
+     
       const response = await axios.get(
         'https://kami-backend-5rs0.onrender.com/services'
       );
@@ -36,9 +34,7 @@ export default function Home({ navigation }) {
       } else {
         console.error('Error during request setup:', error.message);
       }
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
   useEffect(() => {
@@ -62,17 +58,7 @@ export default function Home({ navigation }) {
         </View>
       </View>
 
-      {loading ? (
-        <ActivityIndicator
-          size="large"
-          color="#0000ff"
-          style={styles.loading}
-        />
-      ) : error ? (
-        <Text style={styles.errorText}>{error}</Text>
-      ) : data.length === 0 ? (
-        <Text style={styles.emptyText}>No services available</Text>
-      ) : (
+      
         <FlatList
           data={data}
           keyExtractor={(item) =>
@@ -89,7 +75,7 @@ export default function Home({ navigation }) {
             </View>
           )}
         />
-      )}
+     
     </ScrollView>
   );
 }
