@@ -14,7 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const API_URL = 'https://kami-backend-5rs0.onrender.com/services';
 
 export default function Service({ navigation }) {
-  const [data, setData] = useState([]);
+  
   const [serviceName, setServiceName] = useState('');
   const [price, setPrice] = useState('');
   const [authToken, setAuthToken] = useState('');
@@ -51,7 +51,7 @@ export default function Service({ navigation }) {
       });
 
       console.log('POST Response:', response.data);
-      setData([...data, response.data]);
+      
       setServiceName('');
       setPrice('');
     } catch (error) {
